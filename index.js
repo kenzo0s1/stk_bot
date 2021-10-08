@@ -33,49 +33,49 @@ const week = () => {
     ])
 }
 // Старт бота
-bot.start((ctx) => ctx.reply(`Hello , ${ctx.from.first_name}, your course? `, menu()));
+bot.start(async (ctx) => await ctx.reply(`Hello , ${ctx.from.first_name}, your course? `, menu()));
 // слушаем
 bot
-    .on('message', (ctx) => {
-        ctx.reply(`Hello , ${ctx.from.first_name}, your course? `, menu());
+    .on('message', async (ctx) => {
+        await ctx.reply(`Hello , ${ctx.from.first_name}, your course? `, menu());
     })
-    .on('callback_query', (ctx) => {
+    .on('callback_query', async (ctx) => {
         switch (ctx.callbackQuery.data) {
             case 'teachers':
-                ctx.deleteMessage();
-                ctx.reply('Course: Пи-20 ', teachers.teachers )
+               await ctx.deleteMessage();
+                await ctx.reply('Course: Пи-20 ', teachers.teachers )
                 break;
             case 'pi_20':
-                ctx.deleteMessage();
-                ctx.reply('Course: Пи-20 ', pi_20_week())
+                await ctx.deleteMessage();
+                await ctx.reply('Course: Пи-20 ', pi_20_week())
                 break;
             case 'menu':
-                ctx.deleteMessage();
-                ctx.reply(`Hello , ${ctx.from.first_name}, your course?`, menu())
+                await ctx.deleteMessage();
+                await ctx.reply(`Hello , ${ctx.from.first_name}, your course?`, menu())
                 break;
             case 'pi_20_week':
-                ctx.deleteMessage();
-                ctx.reply('Course: Пи-20: Расписание', week())
+                await ctx.deleteMessage();
+                await ctx.reply('Course: Пи-20: Расписание', week())
                 break;
             case 'pi_20_monday':
-                ctx.deleteMessage();
-                ctx.reply('Course: Пи-20: Расписание: Понедельник', my_const.pi_20_monday)
+                await ctx.deleteMessage();
+                await ctx.reply('Course: Пи-20: Расписание: Понедельник', my_const.pi_20_monday)
                 break;
             case 'pi_20_tuesday':
-                ctx.deleteMessage();
-                ctx.reply('Course: Пи-20: Расписание: Вторник', my_const.pi_20_tuesday)
+                await ctx.deleteMessage();
+                await ctx.reply('Course: Пи-20: Расписание: Вторник', my_const.pi_20_tuesday)
                 break;
             case 'pi_20_wensday':
-                ctx.deleteMessage();
-                ctx.reply('Course: Пи-20: Расписание: Среда', my_const.pi_20_wensday)
+                await ctx.deleteMessage();
+                await ctx.reply('Course: Пи-20: Расписание: Среда', my_const.pi_20_wensday)
                 break;
             case 'pi_20_thursday':
-                ctx.deleteMessage();
-                ctx.reply('Course: Пи-20: Расписание: Четверг', my_const.pi_20_thursday)
+                await ctx.deleteMessage();
+                await ctx.reply('Course: Пи-20: Расписание: Четверг', my_const.pi_20_thursday)
                 break;
             case 'pi_20_friday':
-                ctx.deleteMessage();
-                ctx.reply('Course: Пи-20: Расписание: Пятница', my_const.pi_20_friday)
+                await ctx.deleteMessage();
+                await ctx.reply('Course: Пи-20: Расписание: Пятница', my_const.pi_20_friday)
                 break;
         }
     })
