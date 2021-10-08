@@ -15,29 +15,29 @@ const pi_20_monday = () => {
         ])
 }
 const pi_20_tuesday = () => {
-    return Markup.inlineKeyboard([[Markup.button.callback('1: Безопастность жизни деятельности', '...'), Markup.button.callback('2: Безопастность жизни деятельности', '...')],
-        [Markup.button.callback('3: Экономика', '...'), Markup.button.callback('4: ', '...')],
+    return Markup.inlineKeyboard([[Markup.button.callback('1:', '...'), Markup.button.callback('2: Физкультура ', '...')],
+        [Markup.button.callback('3: ', '...'), Markup.button.callback('4: ', '...')],
         [Markup.button.callback('Назад', 'pi_20_week'), Markup.button.callback('Menu', 'menu')]
 
     ])
 }
 const pi_20_wensday = () => {
-    return Markup.inlineKeyboard([[Markup.button.callback('1: Безопастность жизни деятельности', '...'), Markup.button.callback('2: Безопастность жизни деятельности', '...')],
-        [Markup.button.callback('3: Экономика', '...'), Markup.button.callback('4: ', '...')],
+    return Markup.inlineKeyboard([[Markup.button.callback('1: Селедкин', '...'), Markup.button.callback('2: Селедкин', '...')],
+        [Markup.button.callback('3: ', '...'), Markup.button.callback('4: ', '...')],
         [Markup.button.callback('Назад', 'pi_20_week'), Markup.button.callback('Menu', 'menu')]
 
     ])
 }
 const pi_20_thursday = () => {
-    return Markup.inlineKeyboard([[Markup.button.callback('1: Безопастность жизни деятельности', '...'), Markup.button.callback('2: Безопастность жизни деятельности', '...')],
-        [Markup.button.callback('3: Экономика', '...'), Markup.button.callback('4: ', '...')],
+    return Markup.inlineKeyboard([[Markup.button.callback('1: Менеджмент', '...'), Markup.button.callback('2: Менеджмент', '...')],
+        [Markup.button.callback('3: ', '...'), Markup.button.callback('4: ', '...')],
         [Markup.button.callback('Назад', 'pi_20_week'), Markup.button.callback('Menu', 'menu')]
 
     ])
 }
 const pi_20_friday = () => {
-    return Markup.inlineKeyboard([[Markup.button.callback('1: Безопастность жизни деятельности', '...'), Markup.button.callback('2: Безопастность жизни деятельности', '...')],
-        [Markup.button.callback('3: Экономика', '...'), Markup.button.callback('4: ', '...')],
+    return Markup.inlineKeyboard([[Markup.button.callback('1: Михед', '...'), Markup.button.callback('2: Михед', '...')],
+        [Markup.button.callback('3: ', '...'), Markup.button.callback('4: ', '...')],
         [Markup.button.callback('Назад', 'pi_20_week'), Markup.button.callback('Menu', 'menu')]
 
     ])
