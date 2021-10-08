@@ -5,10 +5,20 @@ const {
 // Импорт dotenv для защиты API токена
 require('dotenv').config()
 // Импорт нашего модуля с константами
+const emoji = require('node-emoji');
 const my_const = require('./const')
 const teachers = require('./teachers')
 // Инициализация бота с помощью Telegraf
 const bot = new Telegraf(process.env.BOT_TOKEN)
+
+const teachers_1 = {
+    t1 : 'Михед,501 аудитория,не отмечает',
+    t2 : 'Селедкин,5 этаж, отмечает',
+    t3 : 'Шарапов,5 этаж, отмечает',
+    t4 : '...,5 этаж, отмечает',
+    t6 : 'Зазуля,Динамо,Белоусовский парк, отмечает'
+
+}
 // кнопки меню
 const menu = () => {
     return Markup.inlineKeyboard([[
@@ -19,7 +29,7 @@ const pi_20_week = () => {
     return Markup.inlineKeyboard([[
         Markup.button.callback('Расписание', 'pi_20_week'),
         Markup.button.callback('Учителя', 'teachers'), ] ,
-        [Markup.button.callback('Назад', 'menu')]
+        [Markup.button.callback(`Назад ${emoji.get('door')}`, 'menu')]
     ])
 }
 const week = () => {
@@ -28,7 +38,7 @@ const week = () => {
         [Markup.button.callback('Среда', 'pi_20_wensday'),Markup.button.callback('Четверг', 'pi_20_thursday')],
 
         [Markup.button.callback('Пятница', 'pi_20_friday')],
-        [Markup.button.callback('Назад', 'pi_20'),Markup.button.callback('Menu', 'menu')],
+        [Markup.button.callback(`Назад ${emoji.get('door')}`, 'pi_20'),Markup.button.callback('Menu', 'menu')],
 
     ])
 }
@@ -47,7 +57,7 @@ bot
                 break;
             case 'pi_20':
                 await ctx.deleteMessage();
-                await ctx.reply('Course: Пи-20 ', pi_20_week())
+                await ctx.reply("Course: Пи-20  ", pi_20_week())
                 break;
             case 'menu':
                 await ctx.deleteMessage();
@@ -77,6 +87,27 @@ bot
                 await ctx.deleteMessage();
                 await ctx.reply('Course: Пи-20: Расписание: Пятница', my_const.pi_20_friday)
                 break;
+            case 'pi_20_teacher_1':
+                await ctx.deleteMessage();
+                await ctx.reply(`Преподаватель : ${teachers_1.t1} `, my_const.left )
+                break;
+            case 'pi_20_teacher_2':
+                await ctx.deleteMessage();
+                await ctx.reply(`Преподаватель : ${teachers_1.t2} `, my_const.left )
+                break;
+            case 'pi_20_teacher_3':
+                await ctx.deleteMessage();
+                await ctx.reply(`Преподаватель : ${teachers_1.t3} ` , my_const.left)
+                break;
+            case 'pi_20_teacher_4':
+                await ctx.deleteMessage();
+                await ctx.reply(`Преподаватель : ${teachers_1.t4} ` , my_const.left)
+                break;
+            case 'pi_20_teacher_6':
+                await ctx.deleteMessage();
+                await ctx.reply(`Преподаватель : ${teachers_1.t6} ` , my_const.left)
+                break;
+
         }
     })
 
